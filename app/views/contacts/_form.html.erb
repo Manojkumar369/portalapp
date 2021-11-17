@@ -1,0 +1,14 @@
+<%= form_with model: contact do |form| %>
+<div>
+	<%= form.label :name %><br>
+	<%= form.text_field :name %>
+</div>
+
+<div>
+	<%= form.label :context %><br>
+	<%= form.text_area :context %>
+</div>
+<div>
+	<%= form.submit %>
+</div>
+<% end %>

@@ -1,0 +1,48 @@
+
+
+<!DOCTYPE html>
+<!--Code by Divinector (www.divinectorweb.com)-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>How to Create responsive Homepage</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">    
+</head>
+<body>
+    <header>
+    <div class="wrapper">
+        <div class="logo">
+            <img src="https://i.postimg.cc/mg4rWBmv/logo.png" alt="">
+        </div>
+		<ul class="nav-area">
+			<li><a href="/home/home">Home</a></li>
+			<li><a href="/home/about_us">About_us</a></li>
+			<li><a href="/courses/index">Courses</a></li>
+			<li><% if current_user %>
+			         <h3>  
+			            <a class="nav-link" href="<%= edit_user_registration_path %>">Profile</a>
+			         </h3>
+			      <% end %></li>
+			
+			<li><a class="nav-link active" href="/users/sign_in">Sign_in</a></li>
+			<li><% if current_user %>
+         
+         			<%= link_to "SignOut", destroy_user_session_path,
+				                  method: :delete,
+				                  class: "nav-link",
+				                  data: { confirm: "Are you sure to logout?" } %>
+			      	<%else%>
+			         <a class="nav-link active" href="/users/sign_in">Sign in</a>
+			      <%end%></li>
+		</ul>
+	</div>
+	<div class="welcome-text">
+        <h1>
+		We are <span>Creative</span></h1>
+		<a href="/contacts/new">Contact US</a>
+    </div>
+	</header>
+
+</body>
+</html>

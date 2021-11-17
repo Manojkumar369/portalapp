@@ -1,0 +1,22 @@
+<%= form_with model:course do |form| %>
+<div>
+	<%= form.label :Course %><br>
+	<%= form.text_field :course %>
+</div>
+
+<div>
+	<%= form.label :Faculty %><br>
+	<%= form.text_field :faculty %>
+</div>
+<div>
+	<%= form.label :Duration %><br>
+	<%= form.text_field :duration %>
+</div>	
+<div>
+	<%= form.label :Available_seats %><br>
+	<%= form.text_field :seats_available %>
+</div>	
+<div>
+	<%= form.submit %>
+</div>
+<% end %>
